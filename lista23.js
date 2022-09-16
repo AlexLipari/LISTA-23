@@ -9,8 +9,9 @@ do {
             dadosUsuario()
             break;
         case "2":
-            var nomeLogin = prompt("qual o nome do cadastro?")
-            var senhaLogin = prompt("Qual a senha do login?")
+
+            let nomeLogin = prompt("qual o nome do login?")
+            let senhaLogin = prompt("Qual a senha do login?")
             if (validarLogin(nomeLogin, senhaLogin)) {
                 console.log("Login feito com sucesso!")
                 console.log("Bem vindo", nomeLogin)
@@ -31,8 +32,9 @@ do {
 } while (continuar)
 
 function dadosUsuario() {
-    nomes.push = (prompt("Digite um nome!"))
-    senhas.push = (prompt("digite uma senha!"))
+    nomes.push(prompt("Digite um nome!"))
+    senhas.push(prompt("digite uma senha!"))
+    console.log(nomes, senhas)
 }
 
 function operacaoSolicitada() {
@@ -41,11 +43,14 @@ function operacaoSolicitada() {
 
 function validarLogin(nomeParametro, senhaParametro) {
     let login = false
-    nomes.forEach((n, index) => {
-        if (nomeParametro == n && senhaParametro == senhas[index]) {
+    nomes.forEach((nome, index) => {
+        if (nomeParametro == nome && senhaParametro == senhas[index]) {
             login = true
+
         }
+
     })
+
     return login
 }
 
